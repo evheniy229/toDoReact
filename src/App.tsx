@@ -1,25 +1,27 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Tasks from './components/tasks';
+interface Props{
+  store: any;
+}
+const App: React.FC<Props>=({store})=>{
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="site-wrapper">
+      <div className="top-screen">
+        <div className="container">
+          <div className="ts-head">
+            <h1>Your Things</h1>
+          </div>
+          <div className="tasks">
+            <Tasks
+              store={store}
+            />
+          </div>
+        </div>
+      </div>
+    </div >
   );
 }
 
